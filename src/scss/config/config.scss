@@ -1,0 +1,25 @@
+@import './reset';
+@import './../components/footer';
+@import './../components/header';
+
+$globalContainerWidth: 90%;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: #FFFFFF;
+}
+
+.container_main {
+  width: $globalContainerWidth;
+  margin: 0 auto;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  background-image: url('../../images/milkincstudio/background.png');
+  background-attachment: fixed;
+  background-position: center center;
+  background-size: cover;
+}
