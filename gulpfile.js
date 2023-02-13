@@ -8,6 +8,8 @@ const removeComments = require('gulp-strip-css-comments')
 const rename = require('gulp-rename')
 const sass = require('gulp-sass')(require('sass'))
 const cssnano = require('gulp-cssnano')
+const gcmq = require('gulp-group-css-media-queries')
+const sourcemaps = require('gulp-sourcemaps') // TODO: sourcemaps для js
 const uglify = require('gulp-uglify')
 const plumber = require('gulp-plumber')
 const nunjucks = require('gulp-nunjucks')
@@ -31,7 +33,7 @@ const path = {
     src: {
         html: srcPath + '*.html',
         css: srcPath + 'scss/**/*.scss',
-        js: srcPath + 'js/*.js',
+        js: srcPath + 'js/**/*.js',
         images: srcPath + 'images/**/*.{jpg,png,svg,gif,ico,webp,webmanifest,xml,json}',
         fonts: srcPath + 'fonts/**/*.{eot.woff,woff2,ttf,svg}'
     },
@@ -75,10 +77,14 @@ function css() {
                 this.emit('end')
             }
         }))
+        .pipe(sourcemaps.init())
         .pipe(sass())
         .pipe(autoprefixer())
         .pipe(cssbeautify())
+        .pipe(gcmq())
+        .pipe(sourcemaps.write())
         .pipe(dest(path.build.css))
+        .pipe(sourcemaps.init())
         .pipe(cssnano({
             zIndex: false,
             discardComments: {
@@ -90,6 +96,7 @@ function css() {
             suffix: '.min',
             extname: '.css'
         }))
+        .pipe(sourcemaps.write())
         .pipe(dest(path.build.css))
         .pipe(browserSync.stream())
 }

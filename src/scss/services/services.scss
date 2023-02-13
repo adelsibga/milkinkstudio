@@ -1,1 +1,11 @@
 @import '../config/config';
+
+body {
+  background-image: url('../../images/services/background-table.png');
+}
+
+@media screen and (min-width: 1025px) {
+  body {
+    background-image: url('../../images/services/background.png');
+  }
+}

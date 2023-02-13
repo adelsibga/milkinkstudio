@@ -1,19 +1,55 @@
-.header {
-  display: flex;
-  align-content: center;
-  flex-direction: row;
-  justify-content: space-between;
-  padding: 45px 0;
-  text-align: center;
+@import '../config/colors';
 
+.header {
   &__logo svg {
     width: 130px;
     height: 45px;
-    color: #FFFFFF;
   }
 
   &__burger svg {
     width: 45px;
     height: 45px;
+    transition: all .3s ease;
+
+    &:hover,
+    &:focus,
+    &:active {
+      transition: all .3s ease;
+      transform: rotate(4deg);
+    }
+  }
+
+  &__logo svg,
+  &__burger svg {
+    &:hover,
+    &:focus,
+    &:active {
+      path {
+        transition: all .3s ease;
+        fill: $globalColorPrimaryHover;
+      }
+    }
+
+    path {
+      transition: all .3s ease;
+      fill: $globalColorPrimary;
+    }
+  }
+
+  &__menu {
+    display: flex;
+    align-content: center;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 30px 0;
+    text-align: center;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .header {
+    &__menu {
+      padding: 43px 0;
+    }
   }
 }

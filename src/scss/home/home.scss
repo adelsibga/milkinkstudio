@@ -1,5 +1,11 @@
 @import '../config/config';
 
-.top {
+body {
+  background-image: url('../../images/home/background-table.png');
+}
 
+@media screen and (min-width: 1025px) {
+  body {
+    background-image: url('../../images/home/background.png');
+  }
 }

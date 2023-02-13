@@ -1,1 +1,14 @@
 @import '../config/config';
+
+body {
+  background-image: url('../../images/work/background-table.png');
+  background-position: center center;
+}
+
+@media screen and (min-width: 1025px) {
+  body {
+    background-image: url('../../images/work/background.png');
+    background-position: top right;
+    background-size: cover;
+  }
+}

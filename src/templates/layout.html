@@ -4,18 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{{ title }}</title>
+    <title>{% if title %}{{ title }}{% else %}Milkink Creative Studio | Where imagination becomes reality{% endif %}</title>
+    <meta name="description"
+          content="{% if description %}{{ description }}{% else %}Milkink Creative Studio is a Vienna-based multidisciplinary creative agency specializing in visual art, graphic design...{% endif %}">
     <meta name="description" content="{{ description }}">
     <link rel="icon" href="images/favicon/favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href=images/favicon/favicon.ico" type="image/x-icon">
     {% block styles %}{% endblock %}
 </head>
 <body>
-<main class="container_main">
-    {% include '../components/header.html' %}
-    {% block content %}{% endblock %}
-    {% include '../components/footer.html' %}
+<main class="container_main" role="main">
+    <div class="page-content">
+        {% include '../components/header.html' %}
+        {% block content %}{% endblock %}
+        {% include '../components/footer.html' %}
+    </div>
 </main>
+<script src="./js/components/header.js"></script>
+<script src="./js/components/footer.js"></script>
 {% block scripts %}{% endblock %}
 </body>
 </html>

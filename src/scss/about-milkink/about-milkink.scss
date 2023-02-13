@@ -1,1 +1,13 @@
 @import '../config/config';
+
+body {
+  background-image: url('../../images/about-milkink/background-table.png');
+  background-position: center right;
+
+}
+
+@media screen and (min-width: 1025px) {
+  body {
+    background-image: url('../../images/about-milkink/background.png');
+  }
+}
