@@ -1,1 +1,1 @@
-.header{font-size:18px;color:green}
+.header{display:flex;align-content:center;flex-direction:row;justify-content:space-between;padding:45px 0;text-align:center}.header__logo svg{width:130px;height:45px;color:#fff}.header__burger svg{width:45px;height:45px}
