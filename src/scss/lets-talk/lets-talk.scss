@@ -1,5 +1,11 @@
 @import '../config/config';
 
+.header {
+  &__talk {
+    color: $globalColorPrimaryHover !important;
+  }
+}
+
 body {
   background-image: url('../../images/lets-talk/background-table.png');
 }

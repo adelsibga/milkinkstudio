@@ -1,5 +1,11 @@
 @import '../config/config';
 
+.header {
+  &__about {
+    color: $globalColorPrimaryHover !important;
+  }
+}
+
 body {
   background-image: url('../../images/about-milkink/background-table.png');
   background-position: center right;

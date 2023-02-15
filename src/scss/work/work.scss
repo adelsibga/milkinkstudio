@@ -1,5 +1,11 @@
 @import '../config/config';
 
+.header {
+  &__work {
+    color: $globalColorPrimaryHover !important;
+  }
+}
+
 body {
   background-image: url('../../images/work/background-table.png');
   background-position: center center;

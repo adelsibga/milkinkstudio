@@ -1,4 +1,44 @@
-@import '../config/colors';
+@import '../config/const';
+@import '../animations/fadeIn';
+@import '../animations/slideIn';
+
+.reverse {
+  animation-direction: reverse;
+  animation-fill-mode: forwards;
+}
+
+.gray-layer {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  opacity: 0.3;
+  background-color: $globalGrayLayer;
+}
+
+.close {
+  display: block;
+  width: 45px;
+  height: 45px;
+
+  &__svg {
+    transition: $defaultTransition;
+    fill: $globalColorPrimary;
+
+    &:hover,
+    &:focus,
+    &:active {
+      transition: $defaultTransition;
+      transform: rotate(4deg);
+      fill: $globalColorPrimaryHover;
+    }
+  }
+}
+
+header {
+  position: sticky;
+  top: 0;
+}
 
 .header {
   &__logo svg {
@@ -9,12 +49,12 @@
   &__burger svg {
     width: 45px;
     height: 45px;
-    transition: all .3s ease;
+    transition: $defaultTransition;
 
     &:hover,
     &:focus,
     &:active {
-      transition: all .3s ease;
+      transition: $defaultTransition;
       transform: rotate(4deg);
     }
   }
@@ -25,15 +65,35 @@
     &:focus,
     &:active {
       path {
-        transition: all .3s ease;
+        transition: $defaultTransition;
         fill: $globalColorPrimaryHover;
       }
     }
 
     path {
-      transition: all .3s ease;
+      transition: $defaultTransition;
       fill: $globalColorPrimary;
     }
+  }
+
+  &__burger-wrapper {
+    position: fixed;
+    z-index: 9999;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    animation-duration: $defaultAnimationDuration;
+    text-align: center;
+    border-radius: 30px 0 0 30px;
+    background-image: url('../../images/menu/menu-background.png');
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: cover;
   }
 
   &__menu {
@@ -43,6 +103,39 @@
     justify-content: space-between;
     padding: 30px 0;
     text-align: center;
+
+    &-item {
+      transition: $defaultTransition;
+      text-decoration: none;
+
+      &:hover,
+      &:focus,
+      &:active {
+        transition: $defaultTransition;
+        transform: skew(-8deg);
+
+        a {
+          color: $globalColorPrimaryHover;
+        }
+      }
+
+      a {
+        //font-family: 'Basier Bold', sans-serif;
+        //font-family: 'Rubik', sans-serif;
+        font-size: 52px;
+        font-weight: bold;
+        line-height: 1.2em;
+        text-decoration: none;
+        letter-spacing: -1.1px;
+        color: $globalColorPrimary;
+      }
+    }
+  }
+
+  &__mobile {
+    &-privacy {
+      text-decoration: none;
+    }
   }
 }
 
@@ -51,5 +144,13 @@
     &__menu {
       padding: 43px 0;
     }
+
+    &__mobile {
+      display: none;
+    }
   }
+}
+
+.hidden {
+  display: none;
 }

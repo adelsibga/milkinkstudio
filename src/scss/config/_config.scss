@@ -1,7 +1,7 @@
 @import './reset';
 @import './../components/footer';
 @import './../components/header';
-@import '../config/colors';
+@import '../config/const';
 
 $globalContainerWidth: 90%;
 
@@ -27,6 +27,10 @@ body {
   background-repeat: repeat-y;
   background-position: top center;
   background-size: cover;
+}
+
+@media screen and (min-width: 768px) {
+
 }
 
 @media screen and (min-width: 1025px) {

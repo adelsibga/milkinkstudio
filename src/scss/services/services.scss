@@ -1,5 +1,11 @@
 @import '../config/config';
 
+.header {
+  &__services {
+    color: $globalColorPrimaryHover !important;
+  }
+}
+
 body {
   background-image: url('../../images/services/background-table.png');
 }
