@@ -2,13 +2,13 @@
 
 body {
   background-image: url('../../images/privacy-policy/background-table.png');
-  background-position: center center;
+  background-position: top center;
 }
 
 @media screen and (min-width: 1025px) {
   body {
     background-image: url('../../images/privacy-policy/background.png');
-    background-position: top right;
+    background-position: 0 95%;
     background-size: cover;
   }
 }

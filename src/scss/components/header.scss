@@ -89,11 +89,37 @@ header {
     height: 100%;
     animation-duration: $defaultAnimationDuration;
     text-align: center;
-    border-radius: 30px 0 0 30px;
     background-image: url('../../images/menu/menu-background.png');
     background-attachment: fixed;
     background-position: center center;
     background-size: cover;
+  }
+
+  &__welcome,
+  &__work,
+  &__about,
+  &__services,
+  &__talk {
+    font-size: 52px;
+    font-weight: bold;
+    line-height: 1.2em;
+    display: block;
+    width: 100%;
+    transition: $defaultTransition;
+    text-decoration: none;
+    letter-spacing: -1.1px;
+    color: $globalColorPrimary;
+
+    &:hover,
+    &:focus,
+    &:active {
+      transition: $defaultTransition;
+      color: $globalColorPrimaryHover;
+    }
+
+    &_red {
+      color: $globalColorPrimaryHover;
+    }
   }
 
   &__menu {
@@ -113,28 +139,87 @@ header {
       &:active {
         transition: $defaultTransition;
         transform: skew(-8deg);
-
-        a {
-          color: $globalColorPrimaryHover;
-        }
       }
 
-      a {
-        //font-family: 'Basier Bold', sans-serif;
-        //font-family: 'Rubik', sans-serif;
-        font-size: 52px;
-        font-weight: bold;
-        line-height: 1.2em;
-        text-decoration: none;
-        letter-spacing: -1.1px;
-        color: $globalColorPrimary;
+      &-list {
+        width: 100%;
+        max-width: 80%;
+        padding: 0 0 25px;
       }
     }
   }
 
   &__mobile {
     &-privacy {
+      font-family: 'Basier Bold', sans-serif;
+      font-size: 17px;
+      font-weight: 600;
+      line-height: 1.3em;
+      transition: $defaultTransition;
       text-decoration: none;
+      letter-spacing: 0;
+      color: $globalColorPrimary;
+
+      &:hover,
+      &:focus,
+      &:active {
+        transition: $defaultTransition;
+        color: $globalColorPrimaryHover;
+      }
+    }
+  }
+}
+
+.icons-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  max-width: 160px;
+  margin: 0 auto;
+  padding: 15px 0 0;
+}
+
+.icon-svg {
+  &__instagram,
+  &__behance,
+  &__dribbble,
+  &__linkedin {
+    width: 20px;
+    height: 20px;
+    fill: $globalColorPrimary;
+  }
+}
+
+.icon {
+  &-instagram,
+  &-behance,
+  &-dribbble,
+  &-linkedin {
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+    transition: $defaultTransition;
+
+    &:hover,
+    &:focus,
+    &:active {
+      transition: $defaultTransition;
+      transform: translateY(8px);
+      opacity: .9;
+      border-radius: 10px;
+      background-color: $globalColorPrimaryHover;
+    }
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .header {
+    &__burger-wrapper {
+      border-radius: 30px 0 0 30px;
     }
   }
 }
@@ -149,8 +234,4 @@ header {
       display: none;
     }
   }
-}
-
-.hidden {
-  display: none;
 }
