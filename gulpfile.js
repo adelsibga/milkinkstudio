@@ -1,5 +1,6 @@
 'use strict'
-
+// TODO: change nunjucks to twig
+// TODO: configure fonts task
 const {src, dest} = require('gulp')
 const gulp = require('gulp')
 const autoprefixer = require('gulp-autoprefixer')
