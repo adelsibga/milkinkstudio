@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/adelsibga/gulp-template.git"
+    "url": "https://github.com/adelsibga/milkinkstudio"
   },
   "author": "Adel Sibgatullin <adelsibga@gmail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/adelsibga/gulp-template/issues"
+    "url": "https://github.com/adelsibga/milkinkstudio/issues"
   },
-  "homepage": "https://github.com/adelsibga/gulp-template#readme",
+  "homepage": "https://github.com/adelsibga/milkinkstudio#readme",
   "devDependencies": {
     "browser-sync": "^2.27.11",
     "del": "^6.0.0",
